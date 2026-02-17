@@ -16,6 +16,7 @@ def create_app() -> Flask:
     app.config.from_prefixed_env()
     celery_init_app(app)
 
+    
     @app.route("/")
     def index() -> str:
         return render_template("index.html")
